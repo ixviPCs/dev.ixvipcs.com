@@ -31,12 +31,12 @@ app.get("/auth/status", (req,res) => {
 
 // serve panel
 app.get("/panel", (req,res)=>{
-  if(!req.session.ok) return res.redirect("/login/index.html");
-  res.sendFile(path.join(__dirname,"panel.html"));
+  if(!req.session.ok) return res.redirect("/Login");
+  res.sendFile(path.join(__dirname,"/Panel"));
 });
 
 // redirect root to login
-app.get("/", (req,res) => res.redirect("/login/index.html"));
+app.get("/", (req,res) => res.redirect("/Login"));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
